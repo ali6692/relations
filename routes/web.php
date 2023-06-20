@@ -17,8 +17,9 @@ use Inertia\Inertia;
 |
 */
 // 
-Route::get('/data',[App\Http\Controllers\IndexController::class, 'index']);
-Route::get('/group',[App\Http\Controllers\IndexController::class,'group']);
+//Route::get('/data',[App\Http\Controllers\IndexController::class, 'index']);
+Route::get('/create',[App\Http\Controllers\TestController::class,'group']);
+Route::get('/view',[App\Http\Controllers\TestController::class, 'index']);
 /*Route::get('/register',[RegistrationController::class,'register']);
 Route::get('/customer',function()
 {
