@@ -2,7 +2,7 @@
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\CompanyController;
 
 use Inertia\Inertia;
 
@@ -18,5 +18,6 @@ use Inertia\Inertia;
 
 */ 
 
-Route::get('/view',[App\Http\Controllers\TestController::class,'index']);
+//Route::get('/view',[App\Http\Controllers\TestController::class,'index']);
+Route::resource('companies',CompanyController::class);
 
