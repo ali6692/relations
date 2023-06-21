@@ -27,11 +27,34 @@ class TestController extends Controller
         //dd($post->toArray());
         // many to many
         $categories=Category::all();
-        $post=Post::with('categories')->get();
-        
-        
+        $post=Post::with('categories')->get();        
         dd($post->toArray());
-
+    }
+    
+    public function contact(Request $request)
+    {
+        $contact= new Contact();
+        $contact->user_id=$request['user_id'];
+        $contact->phone_no=$request['phone_no'];
+        $contact->address=$request['address'];  
+        $contact->save();
+        return $this->belongsTo(User::class);
+    }
+    public function user(Request $request)
+    {
+        $user= new User();
+        $user->name=$request['name'];
+        $user->email=$request['email'];
+        $user->password=$request['password'];
+        $user->save();
+        return $this->hasMany(Post::class);
+    }
+    public function category(Request $request)
+    {
+        $category=new Category();
+        $category->name=$request['name'];
+        $category->save();
+        return $this->belongsToMany(Post::class);
     }
 
 }
