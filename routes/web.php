@@ -1,3 +1,9 @@
+<?php
+
+use App\Project;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/projects', function () 
 {
     $project=Project::create([        
