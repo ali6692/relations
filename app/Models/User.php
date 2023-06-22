@@ -24,10 +24,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
+    protected $fillable = ['name','email','password','project_id'
     ];
 
     /**
@@ -66,4 +63,12 @@ class User extends Authenticatable
     //protected $appends = [
     //    'profile_photo_url',
     //]; 
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 }
