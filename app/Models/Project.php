@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
+
     protected $guarded=[];
+
+    protected $table = 'projects';
+
     public function users()
     {
         return $this->hasMany(User::class);
