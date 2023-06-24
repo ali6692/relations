@@ -24,7 +24,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = ['name','email','password','project_id'
+    protected $fillable = ['name','email','password'
     ];
 
     /**
@@ -46,14 +46,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function contact()
-    {
-        return $this->hasOne(Contact::class);
-    }
-    public function posts()
-    {
-        return $this->hasMany(Post::class);
-    }
+    
 
     /**
      * The accessors to append to the model's array form.
@@ -62,13 +55,9 @@ class User extends Authenticatable
      */
     //protected $appends = [
     //    'profile_photo_url',
-    //]; 
-    public function project()
+    //];    
+    public function address()
     {
-        return $this->belongsTo(Project::class);
-    }
-    public function tasks()
-    {
-        return $this->hasMany(Task::class);
+        return $this->hasOne(Address::class);
     }
 }
