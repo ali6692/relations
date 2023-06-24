@@ -4,14 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Comment;
 
-class Post extends Model
+class Photo extends Model
 {
     use HasFactory;
-    public function comments()
+    protected $fillable=['imageable_id','imageable_type','filename'];
+    public function imageable()
     {
-        return $this->morphMany(Comment::class,'commentable');
+        return $this->morphTo();
     }
-
 }
