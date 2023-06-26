@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Image extends Model
 {
     use HasFactory;
-    protected $guarded=['id'];
-    public function tag()
+    public function imageable()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->morphTo();
     }
 }

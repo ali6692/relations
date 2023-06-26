@@ -26,9 +26,12 @@ class TestController extends Controller
         //$post=Post::with('user')->first();
         //dd($post->toArray());
         // many to many
-        $categories=Category::all();
-        $post=Post::with('categories')->get();        
-        dd($post->toArray());
+       // $categories=Category::all();
+        //$post=Post::with('categories')->get();        
+        //dd($post->toArray());
+        $user=User::first();
+        dd($user->toArray());
+
     }
     
     public function contact(Request $request)

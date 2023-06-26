@@ -56,8 +56,13 @@ class User extends Authenticatable
     //protected $appends = [
     //    'profile_photo_url',
     //];    
-    public function address()
+   /* public function address()
     {
         return $this->hasOne(Address::class);
+    }*/
+    public function image()
+    {
+        return $this->morphOne(Image::class,'imageable');
     }
+
 }
