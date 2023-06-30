@@ -4,17 +4,18 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStudentsTable extends Migration
+class CreateCourseablesTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create('students', function (Blueprint $table) {
+        Schema::create('courseables', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('city');
+            $table->foreignId('subject_id')->constrained('subjects');
+            $table->string('courseable_id');
+            $table->string('courseable_type');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ class CreateStudentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('students');
+        Schema::dropIfExists('courseables');
     }
 };
