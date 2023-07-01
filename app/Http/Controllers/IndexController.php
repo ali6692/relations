@@ -1,31 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Member;
-use App\Models\Group;
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
+use App\Models\Author;
+use App\Models\Post;
 class IndexController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        return Member::with('group')->get();
-    }
-    public function group()
-    {
-        return Group::with('member')->get();
-    }
+        $author=Author::find($id);
+        //var_dump($author->username);
+        //var_dump($author->password);
+        //dd($author->post);
+        /*foreach ($author->post as $post)
+        {
+            echo $post->title;
+            echo $post->cat;
+        }*/
 
-    public function member(Request $request)
-    {       
-        $member= new Member();
-        $member->member_id=$request['member_id'];
-        $member->name=$request['name'];
-        $member->email=$request['email'];
-        $member->contact=$request['contact'];
-        $member->group_id=$request['group_id']; 
-        $member->save();
-        return $this->hasMany('App\Models\Member','group_id','group_id');
     }
-    
 }

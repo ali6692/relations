@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Author extends Model
 {
     use HasFactory;
-    public function author()
+    public function post()
     {
-        return $this->belongsTo(Author::class);
+        return $this->hasMany(Post::class);
     }
 }
