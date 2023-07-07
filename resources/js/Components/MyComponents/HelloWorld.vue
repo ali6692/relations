@@ -1,23 +1,20 @@
 <template>
-<h1 v-on:mousemove="getConsole()">Home Component</h1>
-<button v-on:click="getData('Button 1 clicked')">Click me</button>
-<button v-on:dblclick="getData('Button 2 clicked')">Click Me</button>
+<h1>Two Way Binding</h1>
+<input type="text" v-model="count"/>
+<h2>{{count}}</h2>
 </template>
 
 <script>
 export default {
     name:"HelloWorld",
-    methods:{
-        getData(data)
-        {
-            this.count=10;
-        },
-        getConsole()
-        {
-            console.warn("function called")
+    data()
+    {
+        return {
+            count:10
         }
     }
 }
+
 </script>
 <style scoped>
 h1 {
