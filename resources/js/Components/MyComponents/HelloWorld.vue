@@ -1,7 +1,11 @@
 <template>
-<h1>Two Way Binding</h1>
-<input type="text" v-model="count"/>
-<h2>{{count}}</h2>
+<h1>Get input field value</h1>
+<input type="text" placeholder="Enter your email" v-model="email"/>
+<br />
+<br />
+<input type="password" placeholder="Enter your password" v-model="password"/>
+<br /><br />
+<button v-on:click="getData()" type="button">Get values</button>
 </template>
 
 <script>
@@ -10,9 +14,17 @@ export default {
     data()
     {
         return {
-            count:10
+            email:null,
+            password:null
+        }
+    },
+    methods: {
+        getData()
+        {
+            console.warn("values :",this.email,this.password)
         }
     }
+
 }
 
 </script>
