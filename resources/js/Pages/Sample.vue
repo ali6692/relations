@@ -8,9 +8,11 @@
 <script>
 
 import HelloWorld from "@/Components/MyComponents/HelloWorld.vue";
+import Child from "@/Components/MyComponents/Child.vue";
+
 export default {
     name: "Sample",
-    components: {HelloWorld}
+    components: {HelloWorld,Child}
 }
 </script>
 
