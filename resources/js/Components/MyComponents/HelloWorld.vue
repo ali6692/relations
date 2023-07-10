@@ -1,32 +1,50 @@
 <template>
-<h1>Pass Data to child component</h1>
-<Child name="Kashaf Khan" :user="user" :getData="getData"/>
-
+    <div>
+        <h1>Reuse component</h1>
+        <ul>
+            <li v-for="item in users" :key="item.name">
+                <User :data="item" :getData="getData" />
+            </li>
+        </ul>
+    </div>
 </template>
 <script>
-import Child from "@/Components/MyComponents/Child.vue";
+import User from "@/Components/MyComponents/User.vue";
 export default {
-    name:"HelloWorld",
+    name: "HelloWorld",
     components: {
-        Child
+        User
     },
     data() {
         return {
-            user: {
-                name: "Saquib",
-                email:"abc@gmail.com"
-            }
+            users: [
+                {
+                    name:"Faraz Ali Khan",
+                    email: "abc@gmail.com"
+                },
+                {
+                    name:"Insha Gilani",
+                    email:"def@gmail.com"
+                },
+                {
+                    name:"Sana Saeed",
+                    email:"ghi@gmail.com"
+                },
+                {
+                    name:"Iqra Malik",
+                    email:"jkl@gmail.com"
+                }
+            ]
         }
     },
+    props:['msg'],
     methods: {
-        getData() {
-            console.warn("parent function called")
-            alert("Hello")
-        }
+        getData(name) {
+            alert(name)
+        },
     }
 }
 </script>
-
 <style scoped>
 h1 {
     color:darkcyan;
