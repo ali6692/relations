@@ -1,44 +1,33 @@
 <template>
-    <h1>CSS binding</h1>
-    <h2 :class="applyStyle">Home Component</h2>
-    <button v-on:click="colorfull=!colorfull">Apply style</button>
+    <h1>Props in Vue js 3</h1>
+    <Student :name="name"/>
+    <Teacher :name="name"/>
 
 
 </template>
+
 <script>
+
+import Student from "@/Components/MyComponents/Student.vue";
+import Teacher from "@/Components/MyComponents/Teacher.vue";
 export default {
     name: "HelloWorld",
     data() {
         return {
-            colorfull: true
+            name:"Insha"
         }
+
     },
-    computed:
-        {
-            applyStyle() {
-                return {
-                    skyblue: this.colorfull,
-                    err: true,
-                    other: true
-                }
-            }
-        }
+    components:{
+        Student,
+        Teacher
+    }
+
 }
 </script>
 <style scoped>
 h1 {
     color:brown;
-}
-.skyblue{
-    background-color: skyblue;
-    width:250px;
-    padding:20px;
-}
-.err{
-    color:red;
-}
-.other{
-    font-size: 50px;
 }
 </style>
 
