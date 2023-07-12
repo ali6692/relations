@@ -7,12 +7,12 @@
 <script>
 
 import HelloWorld from "@/Components/MyComponents/HelloWorld.vue";
-import User from "@/Components/MyComponents/User.vue";
-/*import Student from "@/Components/MyComponents/Student.vue";
+/*import User from "@/Components/MyComponents/User.vue";
+import Student from "@/Components/MyComponents/Student.vue";
 import Teacher from "@/Components/MyComponents/Teacher.vue";*/
 export default {
     name: "Sample",
-    components: {HelloWorld,User}
+    components: {HelloWorld}
 }
 </script>
 
