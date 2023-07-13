@@ -1,9 +1,7 @@
 <template>
-    <h1>Computed property</h1>
-    <h2>{{(dollars*rupeeVal)-discount}}</h2>
-    <h2>{{(dollars*rupeeVal)-discount}}</h2>
-    <h2>{{getResult}}</h2>
-    <h2>{{getResultMethod()}}</h2>
+    <h1>{{count}}</h1>
+    <button v-on:click="count=count+1">+</button>
+    <button v-on:click="count=count-1">-</button>
 
 
 </template>
@@ -13,30 +11,28 @@
 import User from "@/Components/MyComponents/User.vue";
 export default {
     name: "HelloWorld",
-    data() {
+    data()
+    {
         return {
-            dollars: 100,
-            rupeeVal: 70,
-            discount: 10,
+            count:0
         }
     },
-    methods:
+    watch:{
+        count(val,prev)
         {
-            getResultMethod() {
-                return (this.dollars * this.rupeeVal) - this.discount;
+            if(val>5 && val>prev)
+            {
+                this.count=0
             }
-        },
-    computed: {
-        getResult() {
-            return (this.dollars * this.rupeeVal) - this.discount;
         }
     }
+
 }
 
 </script>
 <style scoped>
 h1 {
-    background-color:deepskyblue;
+    color:lightcoral;
 }
 </style>
 
