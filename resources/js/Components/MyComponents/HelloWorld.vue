@@ -1,34 +1,27 @@
 <template>
-    <h1>{{count}}</h1>
-    <button v-on:click="count=count+1">+</button>
-    <button v-on:click="count=count-1">-</button>
-
-
+    <h1>Slots in Vue js 3</h1>
+    <Child><h1>Code step by step</h1></Child>
+    <Child><a href="#">Code step by step</a></Child>
+    <div class="row">
+        <img width="100px" v-for="img in images" v-bind:src="img"/>
+    </div>
+    <Child><img src="/project-assets/images/20230603_131444.jpg"/></Child>
 </template>
 
 <script>
-
-import User from "@/Components/MyComponents/User.vue";
+import Child from "@/Components/MyComponents/Child.vue";
 export default {
     name: "HelloWorld",
-    data()
-    {
-        return {
-            count:0
-        }
-    },
-    watch:{
-        count(val,prev)
+    components: {
+        Child,
+        data()
         {
-            if(val>5 && val>prev)
-            {
-                this.count=0
+            return {
+                images:["/project-assets/images/20230603_131444.jpg"]
             }
         }
     }
-
 }
-
 </script>
 <style scoped>
 h1 {
