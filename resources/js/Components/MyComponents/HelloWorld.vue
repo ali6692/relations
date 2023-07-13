@@ -1,20 +1,18 @@
 <template>
-    <h1>Form modifiers </h1>
-    <input type="text" v-model.number="data"/>
-    <h2>Data is :{{typeof(data)}}</h2>
-    <h2>Data is :{{data}}</h2>
+    <h1>Non props data</h1>
+    <User data="some data" id="user-cmp"/>
 
 </template>
 
 <script>
+
+import User from "@/Components/MyComponents/User.vue";
 export default {
     name: "HelloWorld",
-    data()
-    {
-        return {
-            data:''
-        }
+    components: {
+        User
     }
+
 
 }
 </script>

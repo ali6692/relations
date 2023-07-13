@@ -1,27 +1,19 @@
 <template>
-    <h2>User Component</h2>
-    <button v-on:click="getUser(userName)">Send User Name</button>
+    <div>
+        <h3>Faraz</h3>
+        <h3>Insha</h3>
+        <h3 v-bind="$attrs">Sana</h3>
+    </div>
+
 </template>
 
 <script>
 export default {
-    name: "User",
-    data()
-    {
-        return {
-            userName:"Faraz"
-        }
-    },
-    props: {
-        getUser: Function
+    name: 'User',
+    props:{
+        id:String,
+        data:String,
     }
-
-
-
-
 }
 </script>
 
-<style>
-
-</style>
