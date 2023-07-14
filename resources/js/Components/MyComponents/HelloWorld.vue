@@ -1,25 +1,25 @@
 <template>
-    <Child>
-        <template v-slot:header>
-            <h1>Faraz</h1>
-        </template>
-        <template v-slot:main>
-            <p>A vue js product</p>
-        </template>
-        <button>Buy now</button>
-        <template v-slot:footer>
-            <button>Buy now</button>
-        </template>
-    </Child>
+    <h1>Dynamic components</h1>
+    <button @click="tab='Java'">Load Java</button>
+    <button @click="tab='Php'">Load Php</button>
+    <button @click="tab='Node'">Load Node</button>
+    <component :is="tab"/>
 </template>
 
-
 <script>
-import Child from "@/Components/MyComponents/Child.vue";
+import Php from "@/Components/MyComponents/Php.vue";
+import Node from "@/Components/MyComponents/Node.vue";
+import Java from "@/Components/MyComponents/Java.vue";
 export default {
     name: "HelloWorld",
     components: {
-        Child
+        Php,Node,Java
+    },
+    data()
+    {
+        return {
+            tab:'Java'
+        }
     }
 }
 
