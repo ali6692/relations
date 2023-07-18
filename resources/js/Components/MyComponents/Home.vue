@@ -1,26 +1,25 @@
 <template>
-    <h1>beforeCreated and created {{name}}</h1>
+    <h1>beforeMount and mounted {{name}}</h1>
+    <h2>Code step by step</h2>
 </template>
 
 <script>
 export default {
     name: "Home",
-    data()
-    {
-        console.warn("created");
-        return{
-            name:"Insha",
+    data(){
+        return {
+            name:"Insha"
         }
     },
-    beforeCreate()
+    beforeMount()
     {
-        alert("beforeCreated");
+        console.warn("beforeMount",this.$el)
     },
-    created()
+    mounted()
     {
-        this.name="Faraz";
-        alert("created");
+        console.warn("mounted",this.$el)
     }
+
 }
 </script>
 
