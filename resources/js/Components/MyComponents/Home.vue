@@ -1,25 +1,21 @@
 <template>
-    <h1 ref="count">{{counter}}</h1>
-    <button v-on:click="counter=counter+1">Update count</button>
+    <button v-on:click="show=!show">Toggle</button>
+    <User v-if="show"/>
 </template>
 
 <script>
+import User from "@/Components/MyComponents/User.vue";
 export default {
     name: "Home",
-    data() {
-        return {
-            counter:0
-        }
-    },
-    beforeUpdate()
+    data()
     {
-        console.log("beforeUpdate",this.$refs['count'].textContent);
+      return {
+          show:true
+      }
     },
-    updated()
-    {
-        console.log("updated",this.$refs['count'].textContent);
+    components:{
+        User
     }
-
 }
 </script>
 
