@@ -1,23 +1,23 @@
 <template>
-    <h1>beforeMount and mounted {{name}}</h1>
-    <h2>Code step by step</h2>
+    <h1 ref="count">{{counter}}</h1>
+    <button v-on:click="counter=counter+1">Update count</button>
 </template>
 
 <script>
 export default {
     name: "Home",
-    data(){
+    data() {
         return {
-            name:"Insha"
+            counter:0
         }
     },
-    beforeMount()
+    beforeUpdate()
     {
-        console.warn("beforeMount",this.$el)
+        console.log("beforeUpdate",this.$refs['count'].textContent);
     },
-    mounted()
+    updated()
     {
-        console.warn("mounted",this.$el)
+        console.log("updated",this.$refs['count'].textContent);
     }
 
 }
