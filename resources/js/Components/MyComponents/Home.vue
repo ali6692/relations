@@ -1,20 +1,20 @@
 <template>
-    <button v-on:click="show=!show">Toggle</button>
-    <User v-if="show"/>
+    <h1>Home</h1>
+    <Home><h1>Code step by step</h1></Home>
+    <Home><a href="#">Code step by step</a></Home>
+    <Login><a href="#">Login page</a></Login>
+    <Profile><a href="#">Profile page</a></Profile>
+
 </template>
 
 <script>
-import User from "@/Components/MyComponents/User.vue";
+import Login from "@/Components/MyComponents/Login.vue";
+import Profile from "@/Components/MyComponents/Profile.vue";
+
 export default {
     name: "Home",
-    data()
-    {
-      return {
-          show:true
-      }
-    },
     components:{
-        User
+        Login,Profile
     }
 }
 </script>
