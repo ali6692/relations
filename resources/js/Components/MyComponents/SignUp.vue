@@ -1,6 +1,6 @@
 <template>
-    <img class="logo" src="project-assets/1.png">
-    <div class="register">
+    <img class="logo mx-auto text-center" src="project-assets/1.png">
+    <div class="register mt-4 text-center">
         <input type="text" v-model="name" placeholder="Enter your name"/>
         <input type="text" v-model="email" placeholder="Enter your email"/>
         <input type="password" v-model="password" placeholder="Enter your password"/>
@@ -24,16 +24,17 @@ export default {
        async signUp()
         {
             console.warn("signUp",this.name,this.email,this.password)
-            let result=await axios.post("http://127.0.0.1:8000/sample",{
+            let result=await axios.get("http://127.0.0.1:8000/sample",{
                 email:this.email,
                 name:this.name,
                 password:this.password
             });
             console.warn(result);
-            if(result.status===201)
+            if(result.status===200)
             {
                 alert("Sign Up done");
             }
+            localStorage.setItem("user-info",JSON.stringify(result.data))
         }
     }
 }
