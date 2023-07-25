@@ -7,7 +7,7 @@
 //import Home from "@/Components/MyComponents/Home.vue";
 import {router} from "@inertiajs/vue3";
 import SignUp from "@/Components/MyComponents/SignUp.vue";
-//import Login from "@/Components/MyComponents/Login.vue";
+import Header from "@/Components/MyComponents/Header.vue";
 //import Profile from "@/Components/MyComponents/Profile.vue";
 //import Footer from "@/Components/MyComponents/Footer.vue";
 //import Php from "@/Components/MyComponents/Php.vue";
@@ -20,7 +20,7 @@ import SignUp from "@/Components/MyComponents/SignUp.vue";
 export default {
     name: "Sample",
     components:{
-        SignUp,router
+        SignUp,router,Header
     }
 }
 </script>

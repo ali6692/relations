@@ -1,5 +1,5 @@
 <template>
-    <img class="logo mx-auto text-center" src="project-assets/1.png">
+    <img class="logo mx-auto text-center" src="project-assets/images/2.jpg">
     <div class="register mt-4 text-center">
         <input type="text" v-model="name" placeholder="Name"/>
         <input type="text" v-model="email" placeholder="Email"/>
@@ -8,6 +8,8 @@
         <input type="text" v-model="city" placeholder="City"/>
         <input type="number" v-model="pincode" placeholder="Pincode"/>
         <input type="number" v-model="mobile_no" placeholder="Mobile No."/>
+        <input type="text" v-model="veg" placeholder="veg"/>
+        <input type="text" v-model="non_veg" placeholder="non veg"/>
         <button v-on:click="signUp">Sign Up</button>
 
     </div>
@@ -26,13 +28,15 @@ export default {
             country:'',
             city:'',
             pincode:'',
-            mobile_no:''
+            mobile_no:'',
+            veg:'',
+            non_veg:''
         }
     },
     methods:{
         async signUp()
         {
-            console.warn("signUp",this.name,this.email,this.password,this.country,this.city,this.pincode,this.mobile_no)
+            console.warn("signUp",this.name,this.email,this.password,this.country,this.city,this.pincode,this.mobile_no,this.veg,this.non_veg)
             let result=await axios.get("http://127.0.0.1:8000/sample",{
                 email:this.email,
                 name:this.name,
@@ -40,7 +44,9 @@ export default {
                 country:this.country,
                 city:this.city,
                 pincode:this.pincode,
-                mobile_no:this.mobile_no
+                mobile_no:this.mobile_no,
+                veg:this.veg,
+                non_veg:this.non_veg
             });
             console.warn(result);
             if(result.status===200)
