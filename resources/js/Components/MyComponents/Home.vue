@@ -1,14 +1,14 @@
 <template>
-    <Header/>
+<!--    <Header/>-->
     <h1>Welcome to our restaurant</h1>
 </template>
 
 <script>
-import Header from "@/Components/MyComponents/Header.vue";
+// import Header from "@/Components/MyComponents/Header.vue";
 export default {
     name: "Home",
     components:{
-        Header
+        // Header
     }
 }
 </script>
