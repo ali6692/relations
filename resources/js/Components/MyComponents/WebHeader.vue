@@ -1,9 +1,9 @@
 <template>
     <div class="nav">
         <logout></logout>
-        <a href="#">Home</a>
-        <a href="#">Add restaurant</a>
-        <a href="#">Update restaurant</a>
+        <a v-on:click="home" href="#">Home</a>
+        <a v-on:click="add" href="#">Add restaurant</a>
+        <a v-on:click="update" href="#">Update restaurant</a>
         <a v-on:click="logout" href="#">Logout</a>
     </div>
 </template>
@@ -16,7 +16,19 @@ export default {
       logout()
       {
           console.warn("Logged out")
-      }
+      },
+        add()
+        {
+            console.warn("welcome to the add section")
+        },
+        update()
+        {
+            console.warn("welcome to the update page")
+        },
+        home()
+        {
+            console.warn("welcome to the home page")
+        }
     }
 }
 </script>
