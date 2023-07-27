@@ -1,15 +1,23 @@
 <template>
     <div class="nav">
-        <a href="home">Home</a>
-        <a href="home">Add restaurant</a>
-        <a href="home">Update restaurant</a>
-        <a href="home">Logout</a>
+        <logout></logout>
+        <a href="#">Home</a>
+        <a href="#">Add restaurant</a>
+        <a href="#">Update restaurant</a>
+        <a v-on:click="logout" href="#">Logout</a>
     </div>
 </template>
 
 <script>
+
 export default {
-    name: "WebHeader"
+    name: "WebHeader",
+    methods:{
+      logout()
+      {
+          console.warn("Logged out")
+      }
+    }
 }
 </script>
 

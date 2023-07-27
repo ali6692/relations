@@ -32,7 +32,7 @@ export default {
             country:'',
             city:'',
             pincode:'',
-            mobile_no:'',
+            mobile_no:''
         }
     },
     methods:{

@@ -6,8 +6,17 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function home()
+    public function sample()
     {
         return Inertia::render('Sample');
     }
+    public function addRestaurant()
+    {
+        return Inertia::render('add-restaurant');
+    }
+    public function home()
+    {
+        return Inertia::render('home');
+    }
 }
+
