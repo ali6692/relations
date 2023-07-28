@@ -2,7 +2,7 @@
 
   <div>
       <web-header></web-header>
-         <img class="logo mx-auto mt-4 text-center" src="project-assets/images/2.jpg">
+         <img class="logo mx-auto mt-4 text-center" src="project-assets/images/3.jpeg">
 
       <div class="register mt-4 text-center">
           <input type="text" v-model="name" placeholder="Name"/>

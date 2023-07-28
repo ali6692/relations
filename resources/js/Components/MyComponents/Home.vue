@@ -1,7 +1,6 @@
 <template>
     <logout></logout>
 </template>
-
 <script>
 
 export default {

@@ -12,25 +12,22 @@
 
 export default {
     name: "WebHeader",
-    methods:{
-      logout()
-      {
-          console.warn("Logged out")
-      },
-        add()
-        {
+    methods: {
+        logout() {
+            console.warn("Logged out")
+        },
+        add() {
             console.warn("welcome to the add section")
         },
-        update()
-        {
+        update() {
             console.warn("welcome to the update page")
         },
-        home()
-        {
+        home() {
             console.warn("welcome to the home page")
         }
     }
 }
+
 </script>
 
 <style scoped>

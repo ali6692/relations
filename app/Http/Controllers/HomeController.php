@@ -12,7 +12,7 @@ class HomeController extends Controller
     }
     public function addRestaurant()
     {
-        return Inertia::render('add-restaurant');
+        return Inertia::render('Add-Res');
     }
     public function home()
     {
@@ -20,7 +20,7 @@ class HomeController extends Controller
     }
     public function updateRestaurant()
     {
-        return Inertia::render('update-restaurant');
+        return Inertia::render('Update-Res');
     }
 }
 
