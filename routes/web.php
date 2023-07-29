@@ -7,3 +7,7 @@ Route::get('/add-restaurant', [\App\Http\Controllers\HomeController::class, 'add
 Route::get('/update-restaurant', [\App\Http\Controllers\HomeController::class, 'updateRestaurant']);;
 
 
+Route::get('/registration-create', [App\Http\Controllers\StudentController::class, 'create']);
+Route::get('/registration/{id}', [App\Http\Controllers\StudentController::class, 'show']);
+Route::get('/registration-edit/{id}', [App\Http\Controllers\StudentController::class, 'edit']);
+Route::get('/registration-delete/{id}', [App\Http\Controllers\StudentController::class, 'delete']);

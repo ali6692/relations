@@ -6,22 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateStudentsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('name',60);
+            $table->string('email',100);
+            $table->enum('gender',["M","F","O"])->nullable();
+            $table->text('address');
+            $table->string('password')->default('abc');
+            $table->date('dob')->nullable();
+            $table->boolean('status')->default(1);
+            $table->integer('points')->default(0);
             $table->timestamps();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
     public function down()
     {
         Schema::dropIfExists('students');
