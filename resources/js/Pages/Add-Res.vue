@@ -9,6 +9,7 @@
         <input type="text" placeholder="Enter your address" v-model="restaurant.address" name="address"/>
         <input type="text" placeholder="Enter your contact" v-model="restaurant.contact" name="contact"/>
         <button type="button" v-on:click="addRestaurant">Add restaurant</button>
+        <button v-on:click="deleteRestaurant(item.id)">Delete restaurant</button>
     </form>
     </div>
 </template>
@@ -32,6 +33,10 @@ export default {
         addRestaurant()
         {
             console.warn("this.restaurant")
+        },
+        deleteRestaurant(id)
+        {
+            console.warn(id)
         }
     }
 }

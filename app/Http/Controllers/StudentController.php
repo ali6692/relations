@@ -1,71 +1,46 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use function Monolog\toArray;
+
 class StudentController extends Controller
 {
     public function create()
     {
         $students =  \App\Models\Student::create([
-            'name' => 'Faraz Ali Khan',
-            'email'=>'farazmsi2014@gmail.com',
-            'gender'=>'M',
-            'address'=>'I 42 A Abul Fazal Enclave Jamia Nagar',
-            'dob'=>'1995-09-28',
+            'name' => 'Insha Gilani',
+            'email'=>'inshagilanidel1985@gmail.com',
+            'gender'=>'F',
+            'address'=>'F-13/17 B,First Floor,Joga Bai Extension,Okhla,New Delhi-110025',
+            'dob'=>'1998-06-06',
             'password'=>'pqr'
         ]);
-        $registration =  \App\Models\Registration::create([
-            'name' => 'ABC',
-            'email'=>'abc@gmail.com',
-            'gender'=>'M',
-            'address'=>'I 42 A Abul Fazal Enclave Jamia Nagar',
-            'dob'=>'1995-09-28',
-            'password'=>'pqr'
-        ]);
-
         return $students;
-        return $registration;
     }
 
     public function show($id)
     {
         $students = \App\Models\Student::find($id);
-        $registration = \App\Models\Registration::find($id);
-
         return $students;
-        return $registration;
     }
 
     public function edit($id)
     {
         $students  = \App\Models\Student::find($id);
-        $students ->name='Bhavjot Singh';
-        $students ->email='xyz@gmail.com';
-        $students ->gender='M';
-        $students ->address='XYZ';
-        $students ->dob='1996-02-02';
+        $students ->name='Sana Saeed';
+        $students ->email='sanasaeed954@gmail.com';
+        $students ->gender='F';
+        $students ->address='B 21/A,Abul Fazal Enclave,Jamia Nagar,Okhla,New Delhi-110025';
+        $students ->dob='1998-10-20';
         $students ->password='mno';
         $students ->save();
         return $students ;
-        $registration = \App\Models\Registration::find($id);
-        $registration->name='DEF';
-        $registration->email='def@gmail.com';
-        $registration->gender='M';
-        $registration->address='Punjab';
-        $registration->dob='1996-02-02';
-        $registration->password='mno';
-        $registration->save();
-        return $registration;
     }
 
     public function delete($id)
     {
         $students  = \App\Models\Student::find($id);
-        $registration = \App\Models\Registration::find($id);
-
-        $students ->delete();
-        $registration->delete();
-
+        $students->delete();
         return 'student deleted';
-        return 'registration deleted';
     }
 }
