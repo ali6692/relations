@@ -11,3 +11,8 @@ Route::get('/registration-create', [App\Http\Controllers\StudentController::clas
 Route::get('/registration/{id}', [App\Http\Controllers\StudentController::class, 'show']);
 Route::get('/registration-edit/{id}', [App\Http\Controllers\StudentController::class, 'edit']);
 Route::get('/registration-delete/{id}', [App\Http\Controllers\StudentController::class, 'delete']);
+
+Route::get('/all-product',[App\Http\Controllers\ProductController::class, 'create']);
+Route::get('/create',[App\Http\Controllers\ProductController::class, 'create']);
+Route::get('/edit/:id',[App\Http\Controllers\ProductController::class, 'edit']);
+

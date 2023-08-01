@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import WebHeader from "@/Components/MyComponents/WebHeader.vue";
 export default {
     name: "Update",
