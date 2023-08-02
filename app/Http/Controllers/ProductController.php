@@ -7,7 +7,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all()->toArray();
-        return array_reverse($products);
+        return array($products);
     }
     public function store(Request $request)
     {
