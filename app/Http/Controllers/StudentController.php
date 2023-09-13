@@ -8,11 +8,12 @@ class StudentController extends Controller
     public function create()
     {
         $students =  \App\Models\Student::create([
-            'name' => 'Insha Gilani',
-            'email'=>'inshagilanidel1985@gmail.com',
-            'gender'=>'F',
-            'address'=>'F-13/17 B,First Floor,Joga Bai Extension,Okhla,New Delhi-110025',
-            'dob'=>'1998-06-06',
+            'full_name' => 'Faraz Ali Khan',
+            'email'=>'abc@gmail.com',
+            'gender'=>'M',
+            'address'=>'Delhi',
+            'subjects'=>'Maths English Science Social Science',
+            'dob'=>'1995-09-28',
             'password'=>'pqr'
         ]);
         return $students;
@@ -26,14 +27,15 @@ class StudentController extends Controller
 
     public function edit($id)
     {
-        $students  = \App\Models\Student::find($id);
-        $students ->name='Sana Saeed';
-        $students ->email='sanasaeed954@gmail.com';
-        $students ->gender='F';
-        $students ->address='B 21/A,Abul Fazal Enclave,Jamia Nagar,Okhla,New Delhi-110025';
-        $students ->dob='1998-10-20';
-        $students ->password='mno';
-        $students ->save();
+        $students=\App\Models\Student::find($id);
+        $students->full_name='Rubal Gulati';
+        $students->email='def@gmail.com';
+        $students->gender='M';
+        $student->address='Delhi';
+        $students->subjects='Urdu';
+        $students->dob='1996-08-03';
+        $students->password='mno';
+        $students->save();
         return $students ;
     }
 

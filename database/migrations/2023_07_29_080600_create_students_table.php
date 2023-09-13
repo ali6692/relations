@@ -10,9 +10,10 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string('name',60);
+            $table->string('full_name',60);
             $table->string('email',100);
             $table->enum('gender',["M","F","O"])->nullable();
+            $table->longText('subjects');
             $table->text('address');
             $table->string('password')->default('abc');
             $table->date('dob')->nullable();
