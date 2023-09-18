@@ -10,4 +10,12 @@ class Student extends Model
     use HasFactory;
     protected $table="students";
     protected $guarded = [];
+    public function subject()
+    {
+        return $this->belongsToMany(Subject::class);
+    }
+    public function hobby()
+    {
+        return $this->belongsToMany(Hobby::class);
+    }
 }

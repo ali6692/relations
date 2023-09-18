@@ -5,13 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subject extends Model
+class State extends Model
 {
     use HasFactory;
-    protected $table="subjects";
+    protected $table="states";
     protected $guarded = [];
-    public function student()
-    {
-        return $this->belongsToMany(Student::class);
-    }
 }

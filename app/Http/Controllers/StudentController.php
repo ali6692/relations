@@ -8,13 +8,15 @@ class StudentController extends Controller
     public function create()
     {
         $students =  \App\Models\Student::create([
-            'full_name' => 'Faraz Ali Khan',
+            'name' => 'Faraz Ali Khan',
             'email'=>'abc@gmail.com',
             'gender'=>'M',
             'address'=>'Delhi',
-            'subjects'=>'Maths English Science Social Science',
             'dob'=>'1995-09-28',
-            'password'=>'pqr'
+            'mobile_no'=>123,
+            'country_id'=>'1',
+            'state_id'=>'1',
+            'pin_code'=>'110017',
         ]);
         return $students;
     }
@@ -28,13 +30,15 @@ class StudentController extends Controller
     public function edit($id)
     {
         $students=\App\Models\Student::find($id);
-        $students->full_name='Rubal Gulati';
+        $students->name='Rubal Gulati';
         $students->email='def@gmail.com';
         $students->gender='M';
-        $student->address='Delhi';
-        $students->subjects='Urdu';
+        $students->address='Delhi';
         $students->dob='1996-08-03';
-        $students->password='mno';
+        $students->mobile_no=456;
+        $students->state_id='2';
+        $students->country_id='2';
+        $students->pin_code='823001';
         $students->save();
         return $students ;
     }
